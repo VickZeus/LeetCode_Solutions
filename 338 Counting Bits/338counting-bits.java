@@ -1,0 +1,17 @@
+class Solution 
+{
+    public int[] countBits(int n) 
+    {
+
+        int[] count=new int[n+1];
+        count[0]=0;
+        if(n==0)return count;
+        count[1]=1;
+
+        for(int i=2;i<=n;i++)
+        {
+            count[i] = count[i >> 1] + (i & 1);
+        }
+        return count;
+    }
+}
