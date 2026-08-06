@@ -1,0 +1,10 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        PriorityQueue<Integer> pq=new PriorityQueue<>();
+        for(int i=0;i<m;i++)pq.add(nums1[i]);
+        for(int j:nums2)pq.add(j);
+
+        int k=0;
+        while(!pq.isEmpty())nums1[k++]=pq.poll();
+    }
+}
